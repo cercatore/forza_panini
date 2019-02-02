@@ -1,0 +1,14 @@
+runtime: python27
+api_version: 1.0
+threadsafe: true
+entrypoint: uwsgi --http :$PORT --wsgi-file main.py --callable app
+
+
+
+# [START handlers]
+handlers:
+- url: /.*
+  script: main.app
+
+# [END]
+
